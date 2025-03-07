@@ -1,0 +1,5 @@
+psutil
+keyboard
+plyer
+matplotlib
+PyQt5
