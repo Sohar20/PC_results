@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Adlanta</family>
+    <pointsize>11</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(65, 65, 100);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="open_btn">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>360</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Dotum</family>
+      <pointsize>12</pointsize>
+      <weight>7</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+border:2px solid white;
+font: 57 12pt &quot;Dotum&quot;;
+color:white;
+}
+QPushButton:Hover{
+border:2px solid rgb(240, 128, 254);
+font: 57 12pt &quot;Dotum&quot;;
+color:white;
+}
+QPushButton:pressed{
+border:2px solid rgb(56, 217, 153);
+font: 57 12pt &quot;Dotum&quot;;
+color:rgb(56, 217, 153);
+}</string>
+    </property>
+    <property name="text">
+     <string>Open graph</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>601</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="usage_layout">
+     <item>
+      <widget class="QLabel" name="cpu_lbl">
+       <property name="styleSheet">
+        <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color: rgb(56, 217, 153)</string>
+       </property>
+       <property name="text">
+        <string>CPU: --%</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="ram_lbl">
+       <property name="styleSheet">
+        <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color: rgb(240, 128, 254)</string>
+       </property>
+       <property name="text">
+        <string>RAM: --%</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="gpu_lbl">
+       <property name="styleSheet">
+        <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color: rgb(233, 254, 128)</string>
+       </property>
+       <property name="text">
+        <string>GPU: --%</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>601</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="main_lay" stretch="1,1,2,1,1,1,0">
+     <item>
+      <layout class="QHBoxLayout" name="title_lay" stretch="1,7">
+       <item>
+        <widget class="QLabel" name="title_lbl">
+         <property name="styleSheet">
+          <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color:white;</string>
+         </property>
+         <property name="text">
+          <string>Graph's title:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="title_edt">
+         <property name="styleSheet">
+          <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color:white;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="time_lay" stretch="1,3,2,3,2">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetNoConstraint</enum>
+       </property>
+       <item>
+        <widget class="QCheckBox" name="timer_chb">
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox
+{
+font: 57 12pt &quot;Dotum&quot;;
+color: white;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Timer</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <property name="tristate">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="minutes_lbl">
+         <property name="styleSheet">
+          <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color:white;</string>
+         </property>
+         <property name="text">
+          <string>Minutes</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="minutes_edt">
+         <property name="styleSheet">
+          <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color:white;
+border:1px solid rgb(255, 255, 255);</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="seconds_lbl">
+         <property name="styleSheet">
+          <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color:white;</string>
+         </property>
+         <property name="text">
+          <string>Seconds</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="seconds_edt">
+         <property name="styleSheet">
+          <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color:white;
+border:1px solid rgb(255, 255, 255);</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="start_btn">
+       <property name="styleSheet">
+        <string notr="true">background-color:  rgb(45, 174, 122);
+font: 57 12pt &quot;Dotum&quot;;
+color:white;</string>
+       </property>
+       <property name="text">
+        <string>Start monitoring (Alt + P)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="gpu_warn">
+       <property name="styleSheet">
+        <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color: rgb(242, 55, 55)</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="info_lbl">
+       <property name="styleSheet">
+        <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color: rgb(56, 217, 153)</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="warn_lbl">
+       <property name="styleSheet">
+        <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color: rgb(242, 55, 55)</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="time_lbl">
+       <property name="styleSheet">
+        <string notr="true">font: 57 12pt &quot;Dotum&quot;;
+color:white;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="display_btn">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>360</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Dotum</family>
+      <pointsize>12</pointsize>
+      <weight>7</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+border:2px solid white;
+font: 57 12pt &quot;Dotum&quot;;
+color:white;
+}
+QPushButton:Hover{
+border:2px solid rgb(240, 128, 254);
+font: 57 12pt &quot;Dotum&quot;;
+color:white;
+}
+QPushButton:pressed{
+border:2px solid rgb(56, 217, 153);
+font: 57 12pt &quot;Dotum&quot;;
+color:rgb(56, 217, 153);
+}</string>
+    </property>
+    <property name="text">
+     <string>Display the graph</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="save_btn">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>360</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Dotum</family>
+      <pointsize>12</pointsize>
+      <weight>7</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+border:2px solid white;
+font: 57 12pt &quot;Dotum&quot;;
+color:white;
+}
+QPushButton:Hover{
+border:2px solid rgb(240, 128, 254);
+font: 57 12pt &quot;Dotum&quot;;
+color:white;
+}
+QPushButton:pressed{
+border:2px solid rgb(56, 217, 153);
+font: 57 12pt &quot;Dotum&quot;;
+color:rgb(56, 217, 153);
+}</string>
+    </property>
+    <property name="text">
+     <string>Save the graph</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
